@@ -42,8 +42,8 @@ def _create_tf_idf_matrix(data, event_id_column, max_features=1000):
     return tfidf_matrix, tfidf_vectorizer
 
 def _create_log_window_embeddings(data, event_message_column):
-    """Create BERT embeddings for the event messages. Use the DistillBERT model."""
-    logging.info("Creating BERT embeddings for the event messages")
+    """Create SBERT embeddings for the event messages. Use the all-MiniLM-L6-v2 model."""
+    logging.info("Creating SBERT embeddings for the event messages")
     # Load Sentence Transformer model
     model = SentenceTransformer('all-MiniLM-L6-v2')
     # Tokenize the event messages

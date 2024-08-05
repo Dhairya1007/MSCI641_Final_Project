@@ -10,13 +10,13 @@ To run the project, follow these steps:
 1. Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/your-username/your-repository.git
+    git clone https://github.com/Dhairya1007/MSCI641_Final_Project
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd your-repository
+    cd MSCI641_Final_Project
     ```
 
 3. Install the required dependencies:
@@ -25,30 +25,19 @@ To run the project, follow these steps:
     pip install -r requirements.txt
     ```
 
-4. Download the dataset and place it in the `data` directory.
+4. Download the dataset and place it in the `data` directory. (the Hadoop dataset is already in place)
 
-5. Preprocess the data by running the following command:
+5. The first step is parsing the raw logs in the data directory. This can be done by running the parse_logs python script in the logalyzer directory.
 
     ```bash
-    python preprocess.py
+    cd logalyzer
+    python parse_logs.py
     ```
 
-6. Train the LSTM model by running the following command:
+6. Now, for data preparation and model training, just run the train python script.
 
     ```bash
     python train.py
-    ```
-
-7. Evaluate the model by running the following command:
-
-    ```bash
-    python evaluate.py
-    ```
-
-8. Generate predictions for new logs by running the following command:
-
-    ```bash
-    python predict.py
     ```
 
 ## Project Usecase
@@ -63,6 +52,6 @@ The overall project design can be visualized in the following image:
 
 ## LSTM Model Architecture
 
-The architecture of the LSTM model used for log classification is illustrated below:
+The architecture of the custom LSTM model we used in this project is illustrated below:
 
 ![LSTM Model Architecture](images/model_architecture.png)
