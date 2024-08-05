@@ -55,3 +55,13 @@ The overall project design can be visualized in the following image:
 The architecture of the custom LSTM model we used in this project is illustrated below:
 
 ![LSTM Model Architecture](images/model_architecture.png)
+
+## Results
+
+| Model | Accuracy | Precision | Recall | F1-Score |
+|-------|----------|-----------|--------|----------|
+| Random Forest   | 0.63     | 0.79      | 0.38   | 0.54     |
+| Logistic Regresison    | 0.76     | 0.91      | 0.59   | 0.73     |
+| Support Vector Machines   | 0.77     | 0.92      | 0.62   | 0.75     |
+| BiLSTM Custom Model  | 0.86     | 0.93      | 0.76   | 0.85     |
+
