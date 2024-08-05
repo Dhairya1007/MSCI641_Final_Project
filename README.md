@@ -54,7 +54,7 @@ The overall project design can be visualized in the following image:
 
 The architecture of the custom LSTM model we used in this project is illustrated below:
 
-<img src="images/model_architecture.png" alt="LSTM Model Architecture" width="500" height="800"/>
+<img src="images/model_architecture.png" alt="LSTM Model Architecture" width="300" height="700"/>
 
 ## Results
 
