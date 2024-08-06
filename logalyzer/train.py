@@ -4,6 +4,7 @@ import logging
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+import pickle
 
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
@@ -17,6 +18,12 @@ def train_model(model, X_train, y_train):
     logging.info(f"Training model: {model.__class__.__name__}")
     model.fit(X_train, y_train)
     logging.info(f"Model {model.__class__.__name__} trained successfully")
+
+    # save the model
+    model_file = f'../data/models/{model.__class__.__name__.lower()}_model.pkl'
+    with open(model_file, 'wb') as file:
+        pickle.dump(model, file)
+
     return model
 
 # LSTM Model Training Function
@@ -47,7 +54,10 @@ def train_lstm_model(model, X_train, y_train, epochs, batch_size, validation_spl
     # Plot Title
     plt.suptitle(f'LSTM Model Training Loss and Accuracy')
     plt.tight_layout(pad=2.0)  # Add spacing between the two plots
-    plt.savefig('../data/plots/lstm_loss_accuracy.png')    
+    plt.savefig('../data/plots/lstm_loss_accuracy.png')   
+
+    # Save the model
+    model.save('../data/models/lstm_model.h5') 
     return model
 
 # Load the dataset
